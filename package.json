@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 3000",
-    "build": "next build"
+    "dev": "next",
+    "build": "next build && next export",
+    "start": "serve ./out"
   },
   "author": "Tenny",
   "license": "ISC",
