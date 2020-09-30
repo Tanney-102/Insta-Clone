@@ -13,13 +13,13 @@ const UserName = styled.div`
 `;
 
 const UserInfo = () => {
-    const { username, nickname, profilePic } = useSelector(state => state.user);
+    const { id, username, nickname, profilePic } = useSelector(state => state.user);
 
     return(
         <div style={{display:'flex', alignItems:'center'}}>
             <Link href="/profile"><a><Avatar diameter='60px' pic={profilePic} /></a></Link>
             <div style={{marginLeft:'20px'}}>
-                <NickNameLink url={'/profile'}><a>{nickname}</a></NickNameLink>
+                <NickNameLink userId={id}>{nickname}</NickNameLink>
                 <UserName>{username}</UserName>
             </div>
         </div>

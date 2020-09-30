@@ -96,17 +96,17 @@ const LoginForm = () => {
     }, [id, password]);
 
     const fakeLogin =  () => {
-        dispatch(loginDyn('Guest', 'Guest'));
+        dispatch(loginDyn('Guest', 'Guest', 'Guest'));
     };
 
     return (
         <Form onSubmit={e => { e.preventDefault(); }}>
             <Image src="/img/insta-logo.png" alt="insta" />
             <InputContainer className="input-container">
-                <Input type="text" value={id} placeholder="아이디" onChange={onChangeId} />
+                <Input type="text" value={id} placeholder="아이디" autoComplete="off" onChange={onChangeId} />
             </InputContainer>
             <InputContainer className="input-container">
-                <Input type="password" value={password} placeholder="비밀번호" onChange={onChangePassword} />
+                <Input type="password" value={password} placeholder="비밀번호" autoComplete="off" onChange={onChangePassword} />
             </InputContainer>
             <ButtonContainer>
                 <Button className="btn-hover" style={{backgroundColor: btnActivation?theme.btnColor:theme.unactivatedBtn}}>
@@ -121,7 +121,7 @@ const LoginForm = () => {
                 <span style={{fontSize: '0.9rem', color: theme.fontGray}}>또는</span>
                 <HorizontalLine />
             </Partition>
-            <FakeLogin className="btn-hover" onClick={fakeLogin}>가계정으로 로그인하고 둘러보기</FakeLogin>
+            <FakeLogin className="btn-hover" type="button" onClick={fakeLogin}>가계정으로 로그인하고 둘러보기</FakeLogin>
         </Form>
     );
 };

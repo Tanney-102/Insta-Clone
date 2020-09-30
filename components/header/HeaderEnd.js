@@ -2,6 +2,8 @@ import React, { memo, useCallback, useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faHeart, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 import theme from '../../style/theme';
 import LoginForm from '../LoginForm';
@@ -164,18 +166,18 @@ const HeaderEnd = () => {
             <>
                 <Icon className="btn-hover">
                     <Link href="/">
-                        <a><i className="fas fa-home"></i></a>
+                        <a><FontAwesomeIcon icon={faHome} /></a>
                     </Link>
                 </Icon>
                 <Icon className="btn-hover" onClick={toggleNotification} ref={notiIconRef}>
-                    <i className="far fa-heart"></i>
+                    <FontAwesomeIcon icon={faHeart} />
                     {notification &&
                         <DropMenu className="notification" onClick={(e) => { e.stopPropagation(); }}>
                             서비스 준비중
                         </DropMenu>}
                 </Icon>
                 <Icon className="btn-hover" onClick={toggleUserMenu} ref={userIconRef}>
-                    <i className="fas fa-user-circle"></i>
+                    <FontAwesomeIcon icon={faUserCircle} />
                     {userMenu && 
                         <DropMenu className="user-menu" onClick={(e) => { e.stopPropagation(); }}>
                             {/* <MenuPointer /> */}

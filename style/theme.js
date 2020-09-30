@@ -19,6 +19,7 @@ const theme = {
     fontGray: "#8f8f8f",
     fontDarkGray: "#383838",
     fontSkyBlue: "#4ab1f7",
+    heartRed: "f90a0a",
     mobileS: `(max-width: ${size.mobileS})`,
     mobileL: `(max-width: ${size.mobileL})`,
     tabletS: `(max-width: ${size.tabletS})`,

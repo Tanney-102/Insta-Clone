@@ -63,9 +63,6 @@ const Home = () => {
 
     return (
         <>
-            <Head>
-                <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-            </Head>
             <AppLayout>
                 <MainContainer>
                     <PostingArea>

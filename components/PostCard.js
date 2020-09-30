@@ -7,6 +7,7 @@ import theme from '../style/theme';
 import Avatar from './Avatar';
 import NickNameLink from './NickNameLink';
 import PostContents from './PostContents';
+import Description from './Description';
 
 const Container = styled.div`
     width:100%;
@@ -24,24 +25,23 @@ const PostHeader = styled.div`
 `;
 
 const PostCard = ({ post }) => {
-    const _url = `/profile?id=${post.User.id}`
-
     return (
         <Container>
             <PostHeader>
-                <Link href={_url}><a>
+                <Link href={'/profile?id=' + post.User.id}><a>
                     <Avatar diameter='37px' pic={post.User.profilePic}/>
                 </a></Link>
-                <div style={{marginLeft:'15px'}}><NickNameLink url={_url}>{post.User.nickname}</NickNameLink></div>
+                <div style={{marginLeft:'15px'}}><NickNameLink userId={post.User.id}>{post.User.nickname}</NickNameLink></div>
             </PostHeader>
-            <div style={{marginBottom:'15px'}}><PostContents contents={post.contents} /></div>
+            <PostContents post={post} />
+            <Description userId={post.User.id} nickname={post.User.nickname} desc={post.description} />
         </Container>
     );
 };
 
 PostCard.propTypes = {
     post: PropTypes.shape({
-        id: PropTypes.number,
+        id: PropTypes.string,
         User: PropTypes.shape({
             nickname: PropTypes.string,
             profilePic: PropTypes.string,

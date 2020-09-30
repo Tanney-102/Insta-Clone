@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 const ImageContainer = styled.div`
     overflow:hidden;
@@ -15,7 +17,7 @@ const Avatar = ({ diameter, pic }) => {
             ?   <ImageContainer style={{width:diameter, height:diameter, borderRadius:radius}}>
                     <img src={pic} width={diameter} />
                 </ImageContainer>
-            :   <i className="fas fa-user-circle" style={{fontSize:diameter, color:'#bfbfbf'}}></i>}
+            :   <FontAwesomeIcon icon={faUserCircle} style={{fontSize:diameter, color:'#bfbfbf'}} />}
         </>
     );
 };
