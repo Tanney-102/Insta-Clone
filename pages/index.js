@@ -14,8 +14,7 @@ const MainContainer = styled.div`
     width:100%;
     height:100%;
     max-width:950px;
-    margin:30px auto 0;
-    padding-top:30px
+    margin:0 auto;
     padding-left:5px;
 
     display:flex;
@@ -30,13 +29,6 @@ const PostingArea = styled.div`
     width:100%;
     max-width:617.5px;
     height:100%;
-    overflow-Y:auto;
-    overflow-X:hidden;
-
-    -ms-overflow-style: none;
-    &::-webkit-scrollbar { 
-    display: none;
-  }
 `;
 
 const UserProfile = styled.div`

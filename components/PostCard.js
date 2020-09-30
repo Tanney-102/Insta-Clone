@@ -10,6 +10,7 @@ import PostContents from './PostContents';
 import Description from './Description';
 
 const Container = styled.div`
+    margin:30px 0 60px;
     width:100%;
     background-color:#fff;
     border:1px solid ${theme.borderColor};
