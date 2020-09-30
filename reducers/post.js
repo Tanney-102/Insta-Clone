@@ -16,7 +16,8 @@ const initialState = {
         likes:5,
         liked:false,
         marked:false,
-        description: `This is a description area`,
+        description: `This is a description area. This is a description area
+This is a description areaThis is a description areaThis is a description area`,
         Comments: [{
             User:{
                 nickname: 'Danney',

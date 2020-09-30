@@ -16,6 +16,7 @@ const theme = {
     backColorLight: "#fafafa",
     btnColor: "#0095f6",
     unactivatedBtn:"rgba(0, 149, 250, 0.4)",
+    fontGrayLight: "#9f9f9f",
     fontGray: "#8f8f8f",
     fontDarkGray: "#383838",
     fontSkyBlue: "#4ab1f7",
