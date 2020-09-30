@@ -27,7 +27,7 @@ const initialState = {
             likes:3,
         }],
     }, {
-        id:'1',
+        id:'2',
         User: {
             id: 'ote8125',
             nickname: 'ooo__tanney',
