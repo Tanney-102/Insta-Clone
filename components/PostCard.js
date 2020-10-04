@@ -7,7 +7,7 @@ import theme from '../style/theme';
 import Avatar from './Avatar';
 import NickNameLink from './NickNameLink';
 import PostContents from './PostContents';
-import Description from './Description';
+import CommentForm from './CommentForm';
 
 const Container = styled.div`
     margin:30px 0 60px;
@@ -25,6 +25,10 @@ const PostHeader = styled.div`
     align-items:center;
 `;
 
+const Description = styled.div`
+    padding:0 15px;
+`;
+
 const PostCard = ({ post }) => {
     return (
         <Container>
@@ -35,7 +39,14 @@ const PostCard = ({ post }) => {
                 <div style={{marginLeft:'15px'}}><NickNameLink userId={post.User.id}>{post.User.nickname}</NickNameLink></div>
             </PostHeader>
             <PostContents post={post} />
-            <Description userId={post.User.id} nickname={post.User.nickname} desc={post.description} />
+            <Description>
+                <CommentForm 
+                    userId={post.User.id} 
+                    nickname={post.User.nickname} 
+                    propText={post.description}
+                    lineCut={1}
+                />
+            </Description>
         </Container>
     );
 };

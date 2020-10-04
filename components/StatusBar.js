@@ -29,7 +29,7 @@ const BtnContainer = styled.div`
     align-items:center;
 `;
 
-const PageDotContainer = styled.div`
+const Indicator = styled.div`
     width:60%;
     height:100%;
     font-size:7px;
@@ -89,7 +89,7 @@ const StatusBar = ({ post, curSlide, contentLen }) => {
                         </a>
                     </Link>
                 </BtnContainer>}
-                <PageDotContainer>
+                <Indicator>
                     {Array(contentLen).fill().map((v,i) => {
                         if(curSlide === i) {
                             return <BlueDot key={i} icon={faCircle} />
@@ -97,7 +97,7 @@ const StatusBar = ({ post, curSlide, contentLen }) => {
                             return <GreyDot key={i} icon={faCircle} />
                         }
                     })}
-                </PageDotContainer>
+                </Indicator>
                 {isLoggedIn && <BtnContainer style={{justifyContent:'flex-end'}}>
                     {post.marked
                     ?   <FontAwesomeIcon icon={filledBookmark} className="btn-hover" onClick={onClickBookmarkBtn} />
@@ -121,8 +121,8 @@ StatusBar.propTypes = {
         description: PropTypes.string,
         Comments: PropTypes.arrayOf(PropTypes.object),
     }).isRequired,
-    curSlide: PropTypes.number,
-    contentLen: PropTypes.number,
+    curSlide: PropTypes.number.isRequired,
+    contentLen: PropTypes.number.isRequired,
 };
 
 export default StatusBar;
